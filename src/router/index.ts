@@ -1,6 +1,6 @@
 import home from '@/views/home/index.vue'
 import mine from '@/views/mine/index.vue'
-import { createRouter,createWebHistory } from 'vue-router'
+import { createRouter, createWebHistory } from 'vue-router'
 
 const routes = [
     {
@@ -22,9 +22,9 @@ const routes = [
     }
 ]
 
-const router= createRouter({
-    history:createWebHistory(),
-    routes:routes
+const router = createRouter({
+    history: createWebHistory(),
+    routes: routes
 })
 
 export default router
