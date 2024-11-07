@@ -10,6 +10,9 @@ const router=useRouter()
   <!-- <HelloWorld msg="Vite + Vue" /> -->
 <button @click="()=>router.push({path:'/home'})">首页</button>
 <button @click="()=>router.push({path:'/mine'})">我的</button>
+
+<router-link to="home">首页link</router-link>
+<router-link to="mine">我的link</router-link>
 </template>
 
 <style scoped>
