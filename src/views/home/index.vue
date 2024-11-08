@@ -1,28 +1,30 @@
 <script setup lang="ts">
-import { getCurrentInstance, h } from 'vue';
-import {getRoomList} from '@/api/index'
+import { getCurrentInstance, h, ref } from 'vue';
+import { getRoomList } from '@/api/index'
 console.log('home')
 // import { ElMessage } from 'element-plus'
-const {proxy}:any=getCurrentInstance()
+const { proxy }: any = getCurrentInstance()
 const openVn = () => {
-    proxy.$message({
+  proxy.$message({
     message: h('p', { style: 'line-height: 1; font-size: 14px' }, [
       h('span', null, 'Message can be '),
       h('i', { style: 'color: teal' }, 'VNode'),
     ]),
   })
 }
+const size = ref<'default' | 'large' | 'small'>('default')
 
-const getRoomListApi=()=>{
+const value1 = ref('')
+const getRoomListApi = () => {
   getRoomList()
 }
 getRoomListApi()
 </script>
 
 <template>
-<div class="home">
-  <div class="box">xinghaod </div>
-  <div class="el-bb">ddddddddddddd</div>
+  <div class="home">
+    <div class="box">xinghaod </div>
+    <div class="el-bb">ddddddddddddd</div>
     <el-button :plain="true" @click="openVn">Show message</el-button>
     <el-button>Default</el-button>
     <el-button type="primary">Primary</el-button>
@@ -30,16 +32,19 @@ getRoomListApi()
     <el-button type="info">Info</el-button>
     <el-button type="warning">Warning</el-button>
     <el-button type="danger">Danger</el-button>
-</div>
+
+    <el-date-picker v-model="value1" type="date" placeholder="Pick a day" :size="size" />
+  </div>
 </template>
 
 <style lang="scss">
 @import url("@/assets/scss/variable.scss");
-.home{
+
+.home {
   background-color: yellow;
-  .box{
+
+  .box {
     background-color: red;
   }
 }
-
 </style>
