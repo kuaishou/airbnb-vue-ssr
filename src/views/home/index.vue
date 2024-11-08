@@ -4,7 +4,11 @@ import { getRoomList } from '@/api/index'
 
 import { useI18n } from 'vue-i18n'
 
+import IndexedDB from '@/utils/indexedDB'
 
+//模拟数据，indexedDB数据库
+const airbnbDB = new IndexedDB('airbnb')
+airbnbDB.openStore('room', 'id')
 const { t } = useI18n()
 
 console.log(useI18n)
