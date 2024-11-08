@@ -7,12 +7,15 @@ import { ElConfigProvider } from 'element-plus'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import en from 'element-plus/es/locale/lang/en'
 import { ref } from 'vue';
+import { useI18n } from 'vue-i18n';
+
+const { locale } = useI18n()
 
 
-const language=ref(zhCn)
-const changeLanguage=(lang:any)=>{
-  language.value=lang
-
+const language = ref(zhCn)
+const changeLanguage = (lang: any) => {
+  language.value = lang
+  locale.value = lang.name
 }
 </script>
 

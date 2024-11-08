@@ -1,6 +1,13 @@
 <script setup lang="ts">
 import { getCurrentInstance, h, ref } from 'vue';
 import { getRoomList } from '@/api/index'
+
+import { useI18n } from 'vue-i18n'
+
+
+const { t } = useI18n()
+
+console.log(useI18n)
 console.log('home')
 // import { ElMessage } from 'element-plus'
 const { proxy }: any = getCurrentInstance()
@@ -23,8 +30,7 @@ getRoomListApi()
 
 <template>
   <div class="home">
-    <div class="box">xinghaod </div>
-    <div class="el-bb">ddddddddddddd</div>
+    <div class="box">{{ t('message.home') }} </div>
     <el-button :plain="true" @click="openVn">Show message</el-button>
     <el-button>Default</el-button>
     <el-button type="primary">Primary</el-button>
