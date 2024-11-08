@@ -15,7 +15,9 @@ const openVn = () => {
 </script>
 
 <template>
-<div>
+<div class="home">
+  <div class="box">xinghaod </div>
+  <div class="el-bb">ddddddddddddd</div>
     <el-button :plain="true" @click="openVn">Show message</el-button>
     <el-button>Default</el-button>
     <el-button type="primary">Primary</el-button>
@@ -26,6 +28,13 @@ const openVn = () => {
 </div>
 </template>
 
-<style scoped>
+<style lang="scss">
+@import url("@/assets/scss/variable.scss");
+.home{
+  background-color: yellow;
+  .box{
+    background-color: red;
+  }
+}
 
 </style>

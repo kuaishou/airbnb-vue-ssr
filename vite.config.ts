@@ -9,7 +9,7 @@ import { ElementPlusResolver } from 'unplugin-vue-components/resolvers'
 
 export default defineConfig({
   plugins: [
-    vue(), 
+    vue(),
     AutoImport({
       resolvers: [ElementPlusResolver()],
     }),
@@ -25,4 +25,13 @@ export default defineConfig({
       '@': path.resolve(__dirname, './src'),
     },
   },
+  css: {
+    preprocessorOptions: {
+      scss: {
+        // additionalData: `@import "@/assets/scss/variable.scss"`,
+        // additionalData: `$injectedColor: orange;`,
+        silenceDeprecations: ['legacy-js-api']
+      }
+    }
+  }
 });
