@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { getCurrentInstance, h } from 'vue';
-
+import {getRoomList} from '@/api/index'
 console.log('home')
 // import { ElMessage } from 'element-plus'
 const {proxy}:any=getCurrentInstance()
@@ -12,6 +12,11 @@ const openVn = () => {
     ]),
   })
 }
+
+const getRoomListApi=()=>{
+  getRoomList()
+}
+getRoomListApi()
 </script>
 
 <template>

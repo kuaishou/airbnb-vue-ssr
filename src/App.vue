@@ -2,6 +2,8 @@
 import HelloWorld from './components/HelloWorld.vue'
 import {useRouter} from 'vue-router'
 const router=useRouter()
+
+
 </script>
 
 <template>
