@@ -6,17 +6,25 @@ const router = useRouter()
 import { ElConfigProvider } from 'element-plus'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import en from 'element-plus/es/locale/lang/en'
-import { ref } from 'vue';
+import { onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
+import { fetchLanguageApi, saveLanguageApi } from './api/layout';
 
 const { locale } = useI18n()
 
 
 const language = ref(zhCn)
+
+onMounted(async()=>{
+//  const res= await  fetchLanguageApi()
+//  language.value = res
+//  locale.value = lang.name
+})
 const changeLanguage = (lang: any) => {
   console.log('ssssssssssssss', lang)
   language.value = lang
   locale.value = lang.name
+
 }
 </script>
 

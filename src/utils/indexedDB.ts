@@ -42,7 +42,6 @@ export default class DB {
                 }
             }
         })
-
     }
 
 
@@ -68,7 +67,6 @@ export default class DB {
                 reject(error)
             }
         })
-
     }
 
     //删除数据库数据
@@ -86,7 +84,6 @@ export default class DB {
                 reject(error)
             }
         })
-
     }
 
     //查询数据库数据
@@ -104,7 +101,6 @@ export default class DB {
                 reject(error)
             }
         })
-
     }
 
     //查询某一条数据库数据
@@ -122,6 +118,5 @@ export default class DB {
                 reject(error)
             }
         })
-
     }
 }

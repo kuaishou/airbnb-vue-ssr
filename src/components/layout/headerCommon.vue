@@ -2,18 +2,48 @@
 import { ref } from 'vue'
 import zhCn from 'element-plus/es/locale/lang/zh-cn'
 import en from 'element-plus/es/locale/lang/en'
-const emits=defineEmits<{
-    (e:'changeLang',language:any):void,
+import { fetchLanguageApi, saveLanguageApi } from '@/api/layout';
+const emits = defineEmits<{
+    (e: 'changeLang', language: any): void,
 }>()
 const activeIndex = ref('oders')
+
+
+
+const getLanguage = () => {
+    fetchLanguageApi().then(res => {
+        const { success, result } = res
+        if (success) {
+            if (result.name === 'zh') {
+                emits('changeLang', zhCn)
+            } else if (result.name === 'en') {
+                emits('changeLang', en)
+            }
+        }
+        console.log('save success', res.success)
+    })
+}
+
+getLanguage()
+
+
+//保存语言
+const saveLanguage = (lang: any) => {
+    saveLanguageApi(lang).then(res => {
+        console.log('save success', res.success)
+    })
+}
 const handleSelect = (key: string, keyPath: string[]) => {
     console.log(key, keyPath)
-    if(key==='zh'){
-        emits('changeLang',zhCn)
-    }else if(key==='en'){
-        emits('changeLang',en)
+    if (key === 'zh') {
+        emits('changeLang', zhCn)
+    } else if (key === 'en') {
+        emits('changeLang', en)
     }
+    saveLanguage(key)
 }
+
+
 </script>
 <template>
     <div class="header-common">
@@ -67,7 +97,8 @@ const handleSelect = (key: string, keyPath: string[]) => {
 .el-menu--horizontal>.el-menu-item:nth-child(1) {
     margin-right: auto;
 }
-.el-menu-item{
+
+.el-menu-item {
     font-size: 16px;
 }
 </style>

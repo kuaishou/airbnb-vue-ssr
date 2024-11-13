@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { getCurrentInstance, h, ref } from 'vue';
-import { getRoomList,fetchElephant } from '@/api/index'
+// import { getRoomList,fetchElephant } from '@/api/index'
 
 import { useI18n } from 'vue-i18n'
 
@@ -59,16 +59,16 @@ const openVn = () => {
 const size = ref<'default' | 'large' | 'small'>('default')
 
 const value1 = ref('')
-const getRoomListApi = () => {
-  getRoomList()
-}
-getRoomListApi()
+// const getRoomListApi = () => {
+//   getRoomList()
+// }
+// getRoomListApi()
 
 
-const fetchElephantApi = () => {
-  fetchElephant()
-}
-fetchElephantApi()
+// const fetchElephantApi = () => {
+//   fetchElephant()
+// }
+// fetchElephantApi()
 
 </script>
 
