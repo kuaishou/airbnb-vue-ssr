@@ -1,40 +1,12 @@
-html:root {
-    --header-index: 101;
-    --footer-index: 103;
-    --chat-modal-index: 105;
-    --tips-index: 111;
-    --game-modal-index: 2000;
-    --game-modal-drawer-index: 2001;
-  
-    --header-height: 55px;
-    --game-header-height: 40px;
-    --footer-height: 70px;
-  
-    /* 默认文字大小 */
-    --text-size-default: 14px;
-  
-    --border-radius-default: 4px;
-    /* van基础样式覆盖，不涉及主题 */
-    --van-button-default-line-height: 1;
-    --van-button-radius: 4px;
-    --van-button-normal-font-size: 16px;
-    --van-checkbox-size: 12px;
-    --van-font-bold: 500;
-    /* dialog样式 */
-    --van-dialog-radius: 12px;
-    --van-cell-font-size: 12px;
-    --van-collapse-item-content-padding: 12px;
-    --van-padding-md: 0;
-    --van-count-down-font-size: 28px;
-  
-    --van-dialog-width: 100vw;
-    --van-padding-md: 12px;
-    --van-dialog-header-padding-top: 24px;
-    --van-dialog-header-line-height: 20.4px;
-  
-    --number-font: Menlo, Monaco, 'Courier New', monospace;
-  }
-  .el-bb{
-    font-size: 100px;
-  }
-  
+$red:red;
+
+@mixin line-text-overflow{
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin main-wapper{
+  width: 1080px;
+  margin: 0 auto;
+}

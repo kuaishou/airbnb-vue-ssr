@@ -1,5 +1,6 @@
 <script setup lang="ts">
 import headerCommon from '@/components/layout/headerCommon.vue'
+import footerCommon from '@/components/layout/footerCommon.vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
 
@@ -42,6 +43,7 @@ const changeLanguage = (lang: any) => {
 
     <router-link to="home">首页link</router-link>
     <router-link to="mine">我的link</router-link> -->
+    <footerCommon/>
   </el-config-provider>
 
 </template>
