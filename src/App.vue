@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import HelloWorld from './components/HelloWorld.vue'
+import headerCommon from '@/components/layout/headerCommon.vue'
 import { useRouter } from 'vue-router'
 const router = useRouter()
 
@@ -14,7 +14,7 @@ const { locale } = useI18n()
 
 const language = ref(zhCn)
 const changeLanguage = (lang: any) => {
-  console.log('ssssssssssssss',lang)
+  console.log('ssssssssssssss', lang)
   language.value = lang
   locale.value = lang.name
 }
@@ -22,32 +22,35 @@ const changeLanguage = (lang: any) => {
 
 <template>
   <el-config-provider :locale="language">
+    <!-- 头部 -->
+    <headerCommon @changeLang="changeLanguage"/>
+    <!-- 主体 -->
     <router-view></router-view>
-    <button @click="changeLanguage(zhCn)">中文</button>
+    <!-- <button @click="changeLanguage(zhCn)">中文</button>
     <button @click="changeLanguage(en)">English</button>
-    <!-- <HelloWorld msg="Vite + Vue" /> -->
+
     <button @click="() => router.push({ path: '/home' })">首页</button>
     <button @click="() => router.push({ path: '/mine' })">我的</button>
 
     <router-link to="home">首页link</router-link>
-    <router-link to="mine">我的link</router-link>
+    <router-link to="mine">我的link</router-link> -->
   </el-config-provider>
 
 </template>
 
 <style scoped lang="scss">
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
+// .logo {
+//   height: 6em;
+//   padding: 1.5em;
+//   will-change: filter;
+//   transition: filter 300ms;
+// }
 
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
+// .logo:hover {
+//   filter: drop-shadow(0 0 2em #646cffaa);
+// }
 
-.logo.vue:hover {
-  filter: drop-shadow(0 0 2em #42b883aa);
-}
+// .logo.vue:hover {
+//   filter: drop-shadow(0 0 2em #42b883aa);
+// }
 </style>

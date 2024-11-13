@@ -28,7 +28,7 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       scss: {
-        // additionalData: `@import "@/assets/scss/variable.scss"`,
+        // additionalData: `@import url('@/assets/scss/reset.scss')`,
         // additionalData: `$injectedColor: orange;`,
         silenceDeprecations: ['legacy-js-api']
       }
