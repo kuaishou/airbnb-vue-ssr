@@ -33,7 +33,7 @@ const changeLanguage = (lang: any) => {
 <template>
   <el-config-provider :locale="language">
     <!-- 头部 -->
-    <headerCommon v-show="!route.fullPath.indexOf('login')" @changeLang="changeLanguage"/>
+    <headerCommon v-show="route.fullPath.indexOf('login')===-1" @changeLang="changeLanguage"/>
     <!-- 主体 -->
     <router-view></router-view>
     <!-- <button @click="changeLanguage(zhCn)">中文</button>
@@ -44,7 +44,7 @@ const changeLanguage = (lang: any) => {
 
     <router-link to="home">首页link</router-link>
     <router-link to="mine">我的link</router-link> -->
-    <footerCommon/>
+    <footerCommon v-show="route.fullPath.indexOf('login')===-1"/>
   </el-config-provider>
 
 </template>

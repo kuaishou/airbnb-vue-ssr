@@ -2,6 +2,8 @@
 import { FormInstance } from 'element-plus';
 import { reactive, ref } from 'vue';
 import { useRoute, useRouter } from 'vue-router'
+import { useI18n } from 'vue-i18n'
+const { t } = useI18n()
 const router = useRouter()
 const route = useRoute()
 console.log('mi9ne')
@@ -23,15 +25,18 @@ const rules = reactive({
     password: [{ required: true, message: '请输入正确的密码', trigger: 'blur' },],
 })
 
-const submitForm = async (formEl:any) => {
-  if (!formEl) return
-  await formEl.validate((valid:any, fields:any) => {
-    if (valid) {
-      console.log('submit!')
-    } else {
-      console.log('error submit!', fields)
-    }
-  })
+const submitForm = async (formEl: any) => {
+    if (!formEl) return
+    await formEl.validate((valid: any, fields: any) => {
+        if (valid) {
+            console.log('submit!')
+            router.push({
+                name:'home'
+            })
+        } else {
+            console.log('error submit!', fields)
+        }
+    })
 }
 </script>
 
@@ -45,8 +50,8 @@ const submitForm = async (formEl:any) => {
         <div class="right-part">
             <div class="login-panel">
                 <el-tabs v-model="activeName" @tab-click="handleClick">
-                    <el-tab-pane label="登录" name="login"></el-tab-pane>
-                    <el-tab-pane label="注册" name="sign"></el-tab-pane>
+                    <el-tab-pane :label="t('login.logintab')" name="login"></el-tab-pane>
+                    <el-tab-pane :label="t('login.loginSign')" name="sign"></el-tab-pane>
                 </el-tabs>
             </div>
             <el-form ref="ruleFormRef" style="max-width: 600px" :model="ruleForm" :rules="rules" label-width="auto"
