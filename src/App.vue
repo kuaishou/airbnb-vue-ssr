@@ -1,20 +1,21 @@
 <script setup lang="ts">
 import headerCommon from '@/components/layout/headerCommon.vue'
 import footerCommon from '@/components/layout/footerCommon.vue'
-import { useRouter } from 'vue-router'
-const router = useRouter()
 
 import { ElConfigProvider } from 'element-plus'
-import zhCn from 'element-plus/es/locale/lang/zh-cn'
-import en from 'element-plus/es/locale/lang/en'
+// import zhCn from 'element-plus/es/locale/lang/zh-cn'
+// import en from 'element-plus/es/locale/lang/en'
 import { onMounted, ref } from 'vue';
 import { useI18n } from 'vue-i18n';
-import { fetchLanguageApi, saveLanguageApi } from './api/layout';
-
+// import { fetchLanguageApi, saveLanguageApi } from './api/layout';
+import { useRoute, useRouter } from 'vue-router'
+const router = useRouter()
+const route = useRoute()
+console.log('ssssssssssssss',route)
 const { locale } = useI18n()
 
 
-const language = ref(zhCn)
+const language = ref()
 
 onMounted(async()=>{
 //  const res= await  fetchLanguageApi()
@@ -32,7 +33,7 @@ const changeLanguage = (lang: any) => {
 <template>
   <el-config-provider :locale="language">
     <!-- 头部 -->
-    <headerCommon @changeLang="changeLanguage"/>
+    <headerCommon v-show="!route.fullPath.indexOf('login')" @changeLang="changeLanguage"/>
     <!-- 主体 -->
     <router-view></router-view>
     <!-- <button @click="changeLanguage(zhCn)">中文</button>
