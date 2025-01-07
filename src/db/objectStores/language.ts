@@ -1,0 +1,4 @@
+
+const webUser = {
+    keyPath: 'useid'
+}

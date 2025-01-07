@@ -1,8 +1,8 @@
 
 import IndexedDB from '@/utils/indexedDB'
 import { ElLoading } from 'element-plus'
-
-const airbnbDB = new IndexedDB('airbnb')
+import airbnbDB from '../../db'
+// const airbnbDB = new IndexedDB('airbnb')
 
 
 //indexedDB数据库mock数据
