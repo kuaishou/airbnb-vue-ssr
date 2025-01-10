@@ -29,7 +29,7 @@ export default defineConfig({
     preprocessorOptions: {
       scss: {
         // additionalData: `@import url('@/assets/scss/reset.scss')`,
-        // additionalData: `$injectedColor: orange;`,
+        additionalData: `$injectedColor: orange;`,
         silenceDeprecations: ['legacy-js-api']
       }
     }

@@ -3,7 +3,7 @@ import { getCurrentInstance, h, ref } from 'vue';
 // import { getRoomList,fetchElephant } from '@/api/index'
 
 import { useI18n } from 'vue-i18n'
-
+import '@/assets/scss/variable.scss'
 // import IndexedDB from '@/utils/indexedDB'
 
 // //模拟数据，indexedDB数据库
@@ -93,7 +93,7 @@ const value1 = ref('')
 </template>
 
 <style lang="scss">
-@import url("@/assets/scss/variable.scss");
+// @import url("@/assets/scss/variable.scss");
 
 .home {
   background-color: yellow;
